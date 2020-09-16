@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ab89e4a26149f92edaf62d36aeaffe6",
+    "content-hash": "4cc28bb328aaa19257c4188c4a075cd5",
     "packages": [
         {
             "name": "bristol-su/control",
