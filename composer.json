@@ -1,0 +1,40 @@
+{
+    "name": "flyerless/flyerless-service",
+    "description": "A third party service for flyerless",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Tristan Warren",
+            "email": "tristan@flyerless.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "bristol-su/support": "^4.0",
+        "ext-json": "*",
+        "doctrine/dbal": "^2.10",
+        "phpspec/prophecy-phpunit": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flyerless\\Service\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Flyerless\\Tests\\Service\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flyerless\\Service\\FlyerlessServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+name: service-typeform
+title: Typeform Service
+version: develop
+start_page: users:index.adoc
+nav:
+ - modules/users/nav.adoc
+ - modules/developers/nav.adoc
