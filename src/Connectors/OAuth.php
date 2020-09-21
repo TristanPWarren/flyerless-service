@@ -15,14 +15,15 @@ class OAuth extends Connector
     /**
      * @inheritDoc
      */
-    public function request($method, $uri, array $apiOptions = [])
+    public function request($method, $uri, array $options = [])
     {
         $apiOptions['form_params'] = array_merge(
-          (isset($apiOptions['form_params']) ? $apiOptions['form_params'] : []),
+          (isset($options) ? $options : []),
           ['API_token' => $this->getAccessToken()]
         );
         $apiOptions['base_uri'] = $this->getSetting('base_url');
         return $this->client->request($method, $uri, $apiOptions);
+
     }
 
     /**
@@ -60,6 +61,7 @@ class OAuth extends Connector
 
     private function getAccessToken(): string
     {
+
         //Get authModel if it exists
         try {
             $api_key = $this->getSetting('api_key');
@@ -91,6 +93,7 @@ class OAuth extends Connector
             ]);
         }
 
+
         //Get token from flyerless
         $options = [];
 
@@ -98,6 +101,7 @@ class OAuth extends Connector
         $options['form_params'] = [];
         $options['form_params']['API_KEY'] = $this->getSetting('api_key');
         $tokenResponse = $this->client->request('POST', '', $options);
+
 
         //Add token to authModel
         $authModel->access_token = json_decode($tokenResponse->getBody()->getContents())->Token;
