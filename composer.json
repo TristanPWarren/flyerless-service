@@ -13,11 +13,11 @@
     "require": {
         "php": "^7.2",
         "bristol-su/support": "^4.0",
-        "ext-json": "*",
-        "phpspec/prophecy-phpunit": "^2.0"
+        "ext-json": "*"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0"
+        "orchestra/testbench": "^4.0",
+        "phpspec/prophecy-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
